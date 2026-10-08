@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #06101b;
+  --color-ink-900: #0b1623;
+  --color-ink-850: #0f1d2e;
+  --color-ink-800: #132135;
+  --color-ink-700: #1c2c42;
+
+  --color-brand-amber: #f4b65c;
+  --color-brand-cream: #f8d79e;
+  --color-brand-blue: #63a6d4;
+  --color-brand-sky: #9fe1fc;
+  --color-brand-lavender: #b6a9f9;
+  --color-brand-mint: #86d9a8;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-instrument-sans);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-blink: blink 1.1s steps(1, end) infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -14px;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(244 182 92 / 0.55);
+    }
+    60% {
+      box-shadow: 0 0 0 6px rgb(244 182 92 / 0);
+    }
+  }
+}
+
+body {
+  background: var(--color-ink-900);
+  color: #e6edf5;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
